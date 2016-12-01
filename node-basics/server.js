@@ -15,15 +15,17 @@ server.listen(8080, function () {
 */
 
 /* Server setup with express */
+
+// Dependencies
 var express = require('express'),
   app = express(),
-  port = 8080;
+  port = 8080,
+  router = require('./app/routes/routes');
+
+// Route the app
+app.use('/', router);
 
 // Start the server
 app.listen(port, function() {
   console.log('App started.');
-});
-
-app.get('/', function(request, response) {
-  response.send('Hello, World!');
 });
