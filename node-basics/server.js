@@ -25,7 +25,11 @@ var express = require('express'),
 // Route the app
 app.use('/', router);
 
+// Set static files for usage (CSS, images, etc.)
+app.use(express.static(__dirname + '/public'));
+
+
 // Start the server
-app.listen(port, function() {
+app.listen(port, function () {
   console.log('App started.');
 });

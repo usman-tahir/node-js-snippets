@@ -1,14 +1,15 @@
 
 // Require express
 var express = require('express'),
-  router = express.Router();
+  router = express.Router(),
+  path = require('path');
 
 // Export this router
 module.exports = router;
 
 // Route the app when the server runs (homepage)
 router.get('/', function(request, response) {
-  response.send('Hello, World!');
+  response.sendFile(path.join(__dirname, '../../index.html'));
 });
 
 // About page route
