@@ -20,10 +20,15 @@ server.listen(8080, function () {
 var express = require('express'),
   app = express(),
   port = 8080,
-  router = require('./app/routes/routes');
+  router = require('./app/routes/routes'),
+  expressLayouts = require('express-ejs-layouts');
 
 // Route the app
 app.use('/', router);
+
+// Use ejs and express layouts
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
 
 // Set static files for usage (CSS, images, etc.)
 app.use(express.static(__dirname + '/public'));

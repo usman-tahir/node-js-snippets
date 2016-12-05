@@ -9,13 +9,15 @@ module.exports = router;
 
 // Route the app when the server runs (homepage)
 router.get('/', function(request, response) {
-  response.sendFile(path.join(__dirname, '../../index.html'));
+  response.render('pages/index');
 });
 
 // About page route
 router.get('/about', function(request, response) {
-  response.send('About page');
+  response.render('pages/about');
 });
 
-router.get('/contact');
-router.post('/contact');
+// Contact page
+router.get('/contact', function (request, response) {
+  response.render('pages/contact');
+});
