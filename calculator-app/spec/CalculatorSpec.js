@@ -28,6 +28,14 @@ describe ("Calculator", function() {
     expect(calculator.divide(1, 0)).toEqual("Cannot divide by zero.");
   });
 
+  it("should be able to return the reciprocal of a number", function() {
+    expect(calculator.reciprocal(2)).toEqual(0.5);
+  });
+
+  it("should return a division error message when taking the reciprocal of 0", function() {
+    expect(calculator.reciprocal(0)).toEqual("Cannot divide by zero.");
+  });
+
   it("should return NaN for non-number inputs", function() {
 
     // Addition
@@ -45,5 +53,8 @@ describe ("Calculator", function() {
     // Division
     expect(calculator.divide(1, "hello")).toEqual(NaN);
     expect(calculator.divide("hello", "world")).toEqual(NaN);
+
+    // Reciprocal
+    expect(calculator.reciprocal("hello")).toEqual(NaN);
   });
 })

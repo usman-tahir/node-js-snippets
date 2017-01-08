@@ -42,4 +42,12 @@ Calculator.prototype.divide = function(x, y) {
   }
 }
 
+Calculator.prototype.reciprocal = function(x) {
+  if (this.isValidInput(x)) {
+    return this.divide(1, x);
+  } else {
+    return NaN;
+  }
+}
+
 module.exports = Calculator;
